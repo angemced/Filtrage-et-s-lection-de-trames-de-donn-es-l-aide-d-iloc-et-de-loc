@@ -1,0 +1,28 @@
+#importation des modules
+import numpy as np
+import pandas as pd
+
+
+#création de la trame de données employée
+data = { 'Nom': ['John','Mary','Bob','Sarah','Tom','Lisa'],
+        'Département':['IT','Marketing','Ventes','IT','Fiance','Marketing'],
+        'Age': [30, 40, 25, 35, 45, 28],
+        'Sexe': ['Homme','Femme','Homme','Femme','Homme','Femme'],
+        'Salaire':[50000, 60000, 45000, 55000, 70000,55000],
+        'Experience': [3, 7, 2, 5, 10, 4]}
+
+#création de la dataFrame
+data_df = pd.DataFrame(data)
+data_df
+
+#utilisation de la méthode iloc pour selection 3 premiers ligne
+data_df.iloc[:3,]
+
+#utilisation de la méthode loc pour selectioner toutes les lignes marketing
+data_df.loc[data_df['Département']== 'Marketing']
+
+#utiliser iloc pour selectionner colonnes age et sexe pour les 4 premieres lignes
+data_df.iloc[:4,[2,3]]
+
+#utilise loc pour selection colonne salaire et experience ou sexe = homme
+data_df.loc[data_df['Sexe']=='Homme',['Salaire', 'Experience']]
